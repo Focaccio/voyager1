@@ -287,23 +287,7 @@ mpls ip
 
 mpls-lab-hosts
 
-ip host hpov 10.13.6.233
-
-ip host ecdc 10.180.20.1
-ip host bry 10.180.20.10
-ip host hdyfob 10.180.20.23
-ip host hdych 10.180.20.191
-ip host it3750 10.180.32.4
-ip host pcore 10.180.20.254
-
-ip host newecdc 1.0.0.2
-ip host newhdych 1.1.0.2
-ip host mars 99.0.0.99
-
-ip host tdmsm 10.180.132.29
-ip host tdmrr 10.180.36.3
-ip host tdmecdc 10.180.36.1
-ip host tdmbry 10.180.99.17
+ip host name A.B.C.D
 
 
 
