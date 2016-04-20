@@ -1,0 +1,19 @@
+```Getting to GIT to work
+
+```Background:
+I want to get familiar with the shared workspace that is GIT
+I can see the promise of it - it is like a global internet share ready non-gui cloud file system
+
+
+```How I'm getting it to work
+Git Desktop for OSX
+Git Hub Account
+
+```Configurations
++root - I created my git folder in the root at /gitfxlrd
+++fxlrd being the local host
+
+```Lessons Learned
++Commit before Push and or Publish
++The FOLDER is what is GITTING not the files
+++A new file in the folder
