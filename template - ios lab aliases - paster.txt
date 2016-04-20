@@ -1,0 +1,326 @@
+Trigger Access:
+OPTION + COMMAND ?
+
+NOTES:
+MPLS SHOW COMMANDS
+
+LAB TEMPLATES
+MPLS-STUDY-THREE
+
+Hosts:
+mpls-lab-hosts
+
+
+en
+conf t
+no ip domain-look
+line cons 0
+no exec-t
+logg syn
+line vty 0 15
+logg syn
+exec-t 120
+login local
+exi
+user lab privi 15 pass lab
+ho L-A-B--
+
+
+!mpls basic
+ip cef
+mpls label pro ldp
+mpls ldp router-id lo0
+mpls ip
+mpls label range 990000 1000000
+
+
+!general
+alias exec     crs      copy run start
+alias exec     wha      sh run | i alias
+alias exec     c        config t
+alias exec     sid      show int description
+alias exec     siib     show ip int brie
+alias exec     sir      show ip route
+alias exec     sirs     show ip route static
+alias exec     sirc     show ip route connected
+alias exec     sire     show ip route eigrp
+alias exec     siro     show ip route ospf
+alias exec     sirb     show ip route bgp
+alias exec     srso     show run | section ospf
+alias exec     srsb     show run | section bgp
+alias exec     srse     show run | section eigrp
+alias exec     scn      show cdp nei
+alias exec     scnd     show cdp nei det
+alias exec     sr       show run
+
+alias exec     srea     show run | e alias
+
+alias exec     srs      show run | sec
+alias exec     sri      show run | i
+alias exec     srint    show run interface
+alias exec     sip      show ip protocol
+alias exec     ssb      show standby brief
+
+
+
+
+
+!mpls
+
+alias exec     smi       show mpls interfaces
+alias exec     smid      show mpls interfaces detail
+alias exec     smia      show mpls interfaces all
+alias exec     smiv      show mpls interfaces vrf
+
+alias exec     smln      show mpls ldp nei
+alias exec     smlb      show mpls ldp binding
+!smipb is better!
+alias exec     smlbd     show mpls ldp binding detail
+alias exec     smld      show mpls ldp discovery
+alias exec     smldd     show mpls ldp discovery detail
+alias exec     smlp      show mpls ldp parameters
+alias exec     smlis     show mpls ldp igp sync
+alias exec     smlba     show mpls ldp backoff
+alias exec     smlg      show mpls ldp graceful-restart
+
+alias exec     smft      show mpls forwarding-table
+alias exec     smfti     show mpls forwarding-table interface
+alias exec     smftl     show mpls forwarding-table labels
+alias exec     smftn     show mpls forwarding-table next-hop
+alias exec     smftv     show mpls forwarding-table vrf
+alias exec     smftd     show mpls forwarding-table detail
+
+alias exec     smipb     show mpls ip binding
+alias exec     smipbl    show mpls ip binding local
+alias exec     smipbn    show mpls ip binding neighbor
+alias exec     smipbs    show mpls ip binding summary
+alias exec     smipba    show mpls ip binding all
+alias exec     smipbd    show mpls ip binding detail
+alias exec     smipbv    show mpls ip binding vrf
+alias exec     smipbl    show mpls ip binding local
+
+
+alias exec     smsb      show mpls static binding
+alias exec     smsbl     show mpls static binding local
+alias exec     smsbr     show mpls static binding remote
+
+alias exec     smtt      show mpls traffic-eng topology
+alias exec     smttb     show mpls traffic-eng topology brief
+alias exec     smttu     show mpls traffic-eng tunnels
+alias exec     smta      show mpls traffic-eng autoroute
+
+
+!mpls-l2-transport
+alias exec     sml2b      show mpls l2transport binding
+alias exec     sml2bv     show mpls l2transport binding vc
+alias exec     sml2bl     show mpls l2transport binding local-label
+alias exec     sml2bv     show mpls l2transport binding remote-label
+alias exec     sml2hwc    show mpls l2transport hardware-compat
+alias exec     sml2s      show mpls l2transport summary
+
+alias exec     sml2v      show mpls l2transport vc
+alias exec     sml2vde    show mpls l2transport vc detail
+alias exec     sml2vds    show mpls l2transport vc destination
+alias exec     sml2vi     show mpls l2transport vc interface
+
+alias exec     pmp        ping mpls pseudowire
+
+alias exec     dml2sm     debug mpls l2transport signal messages
+
+
+!virtual circuit connection verificavtion VCCV
+! pmp 1.1.1.1 99 reply mode ipv4
+! traceroute mpls ipv4 1.1.1.1/32
+
+
+!vrf
+alias exec     siv       show ip vrf
+alias exec     sivi      show ip vrf interfaces
+alias exec     sirv      show ip route vrf
+alias exec     pv        ping vrf
+alias exec     tv        trace vrf
+alias exec     sic       show ip cef
+!		   sic A.B.C.D
+alias exec     sicv      show ip cef vrf
+alias exec     siav      show ip arp vrf
+alias exec     sivb      show ip vrf brief
+alias exec     sivd      show ip vrf detail
+alias exec     sivid     show ip vrf id
+
+alias exec     siev      show ip eigrp vrf
+alias exec     sibvv     show ip bgp vpnv4 vrf
+
+
+!eigrp
+alias exec     sien         show ip eigrp nei
+alias exec     siev         show ip eigrp vrf
+alias exec     siea         show ip eigrp accounting
+alias exec     siei         show ip eigrp interfaces
+alias exec     sieto        show ip eigrp topo
+alias exec     sietoact     show ip eigrp topo active
+alias exec     sietoall     show ip eigrp topo all
+alias exec     sietodet     show ip eigrp topo detailed
+alias exec     sietosum     show ip eigrp topo sum
+alias exec     sietoz       show ip eigrp topo zero-successors
+alias exec     sietr        show ip eigrp traffic
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+!ospf
+alias exec     sion       show ip ospf nei
+alias exec     siro       show ip route ospf
+alias exec     siobr      show ip ospf border-routers
+alias exec     siod       show ip ospf database
+alias exec     siode      show ip ospf database external
+
+alias exec     siodei     show ip ospf database external | i
+
+alias exec     siodr      show ip ospf database router
+
+alias exec     siodri     show ip ospf database router | i
+
+alias exec     siodd      show ip ospf database database
+
+alias exec     siodn      show ip ospf database network
+alias exec     siodns     show ip ospf database network self
+alias exec     siods      show ip ospf database summary
+alias exec     siodsi     show ip ospf database summary | i
+alias exec     sioda      show ip ospf database asbr-sumary
+alias exec     sioib      show ip ospf interface brief
+alias exec     sios       show ip ospf stat
+alias exec     siot       show ip ospf traffic
+
+
+!bgp
+alias exec        sibvat       show ip bgp vpnv4 all tags
+alias exec        sib          show ip bgp
+alias exec     siba       show ip bgp all
+alias exec     sibp       show ip bgp peer-group
+alias exec        sibs         show ip bgp summary
+! alternative in VRFs
+alias exec     sibas     show ip bgp all summary
+alias exec        sibn        show ip bgp nei
+alias exec        sibva       show ip bgp vpnv4 all
+alias exec        sibvv       show ip bgp vpnv4 vrf
+
+
+
+
+
+
+
+
+
+
+
+
+
+MPLS-STUDY-THREE
+
+GLOBAL
+ip cef
+mpls label pro ldp
+mpls ldp router-id lo0
+mpls ip
+
+
+ip access-list standard MPLS-LDP-Bindings
+remark ALL Loopbacks
+permit 10.180.20.0 0.0.0.255
+exi
+
+no mpls ldp advertise-labels
+mpls ldp advertise-labels for MPLS-LDP-Bindings
+mpls label protocol ldp
+
+
+
+mpls ldp neighbor ABCD password mpls
+
+
+INTERFACES
+mpls ip
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mpls-lab-hosts
+
+ip host hpov 10.13.6.233
+
+ip host ecdc 10.180.20.1
+ip host bry 10.180.20.10
+ip host hdyfob 10.180.20.23
+ip host hdych 10.180.20.191
+ip host it3750 10.180.32.4
+ip host pcore 10.180.20.254
+
+ip host newecdc 1.0.0.2
+ip host newhdych 1.1.0.2
+ip host mars 99.0.0.99
+
+ip host tdmsm 10.180.132.29
+ip host tdmrr 10.180.36.3
+ip host tdmecdc 10.180.36.1
+ip host tdmbry 10.180.99.17
+
+
+
+
+
+MPLS SHOW COMMANDS
+
+
+
+
+SIBVA
+
+
+SIBVAT
+
+
+SMFT
+
+
+SMIPB
